@@ -15,37 +15,38 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class Adapter_t extends FirebaseRecyclerAdapter<Model, Adapter_t.myViewHolder> implements t_interface {
-    private String query = "";
+public class Adapter_t extends FirebaseRecyclerAdapter<Model, Adapter_t.myViewHolder> {
 
+    /**
+     * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
+     * {@link FirebaseRecyclerOptions} for configuration options.
+     *
+     * @param options
+     */
     public Adapter_t(@NonNull FirebaseRecyclerOptions<Model> options) {
         super(options);
     }
 
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull Model model) {
-        if (model.getName().toLowerCase().contains(query.toLowerCase())) {
-            holder.bind(model);
-        } else {
-            holder.hide();
-        }
+        holder.Name.setText(model.getName());
+        holder.Course.setText(model.getCourse());
+        holder.Email.setText(model.getEmail());
+        holder.Room.setText(model.getRoom());
+
+        Glide.with(holder.img.getContext())
+                .load(model.getSurl())
+                .placeholder(com.google.firebase.database.R.drawable.common_google_signin_btn_icon_dark)
+                .circleCrop()
+                .error(com.google.android.gms.base.R.drawable.common_google_signin_btn_icon_dark_normal)
+                .into(holder.img);
     }
 
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items,parent,false);
         return new myViewHolder(view);
-    }
-
-    public void filter(String newQuery) {
-        query = newQuery;
-        notifyDataSetChanged();
-    }
-
-    @Override
-    public void onItemClick(int position) {
-
     }
 
     class myViewHolder extends RecyclerView.ViewHolder {
@@ -55,32 +56,13 @@ public class Adapter_t extends FirebaseRecyclerAdapter<Model, Adapter_t.myViewHo
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            img = itemView.findViewById(R.id.img1);
-            Name = itemView.findViewById(R.id.nametxt);
-            Course = itemView.findViewById(R.id.coursetxt);
-            Email = itemView.findViewById(R.id.emailtxt);
-            Room = itemView.findViewById(R.id.roomtxt);
+            img = (CircleImageView) itemView.findViewById(R.id.img1);
+            Name = (TextView) itemView.findViewById(R.id.nametxt);
+            Course = (TextView) itemView.findViewById(R.id.coursetxt);
+            Email = (TextView) itemView.findViewById(R.id.emailtxt);
+            Room = (TextView) itemView.findViewById(R.id.roomtxt);
         }
 
-        public void bind(Model model) {
-            Name.setText(model.getName());
-            Course.setText(model.getCourse());
-            Email.setText(model.getEmail());
-            Room.setText(model.getRoom());
-
-            Glide.with(img.getContext())
-                    .load(model.getSurl())
-                    .placeholder(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark)
-                    .circleCrop()
-                    .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark)
-                    .into(img);
-            
-        }
-
-        public void hide() {
-            itemView.setVisibility(View.GONE);
-            itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
-        }
     }
 }
 
