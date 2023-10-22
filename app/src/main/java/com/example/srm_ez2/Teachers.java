@@ -17,7 +17,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class Teachers extends AppCompatActivity {
+public class Teachers extends AppCompatActivity{
     RecyclerView recyclerView;
     Adapter_t ad;
 
@@ -80,9 +80,6 @@ public class Teachers extends AppCompatActivity {
                 new FirebaseRecyclerOptions.Builder<Model>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("teacher").orderByChild("Name").startAt(s).endAt(s+"\uf8ff"), Model.class)
                         .build();
-
-
-        Log.d("Query: ", options.toString());
 
         ad = new Adapter_t(options);
         ad.startListening();
