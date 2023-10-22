@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@color/white">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/load_pic"
+            android:layout_centerVertical="true"
+            android:id="@+id/img1"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nametxt"
+            android:text="Teacher Name"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/img1"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/coursetxt"
+            android:text="Course Name"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_below="@id/nametxt"
+            android:layout_toRightOf="@id/img1"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/roomtxt"
+            android:text="Room No"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_below="@id/emailtxt"
+            android:layout_toRightOf="@id/img1"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailtxt"
+            android:text="Email Id"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_below="@id/coursetxt"
+            android:layout_toRightOf="@id/img1"
+            android:layout_marginLeft="10dp"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

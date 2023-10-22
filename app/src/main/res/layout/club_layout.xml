@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@color/white">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/load_pic"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/c_name"
+            android:text="Club Name"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/img2"
+            android:layout_marginLeft="10dp"
+            />
+
+        <View
+            android:id="@+id/rule"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#D1D1D1"
+            android:layout_below="@id/img2"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            />
+
+        <TextView
+            android:id="@+id/c_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rule"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/img2"
+            android:text="@string/lorem_ipsum"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/rule1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#D1D1D1"
+            android:layout_below="@id/c_des"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/rule1"
+            android:layout_marginRight="11dp"
+            android:layout_toRightOf="@id/img2"
+            android:text="Know More"
+            android:textColor="@color/white"
+            android:backgroundTint="#0f2c59"
+            />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
