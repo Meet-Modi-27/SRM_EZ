@@ -1,5 +1,5 @@
 package com.example.srm_ez2;
 
-public interface t_interface {
+public interface RecyclerViewInterface {
     void onItemClick(int position);
 }

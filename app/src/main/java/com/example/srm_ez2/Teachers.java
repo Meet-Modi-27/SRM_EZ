@@ -1,5 +1,6 @@
 package com.example.srm_ez2;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -17,7 +18,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class Teachers extends AppCompatActivity{
+public class Teachers extends AppCompatActivity implements RecyclerViewInterface{
     RecyclerView recyclerView;
     Adapter_t ad;
 
@@ -35,7 +36,7 @@ public class Teachers extends AppCompatActivity{
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("teacher"), Model.class)
                         .build();
 
-        ad = new Adapter_t(options);
+        ad = new Adapter_t(options,this);
         recyclerView.setAdapter(ad);
     }
 
@@ -75,14 +76,19 @@ public class Teachers extends AppCompatActivity{
     }
 
     private void process_search(String s) {
-        s=s.toUpperCase();
         FirebaseRecyclerOptions<Model> options =
                 new FirebaseRecyclerOptions.Builder<Model>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("teacher").orderByChild("Name").startAt(s).endAt(s+"\uf8ff"), Model.class)
                         .build();
 
-        ad = new Adapter_t(options);
+        ad = new Adapter_t(options,this);
         ad.startListening();
         recyclerView.setAdapter(ad);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        System.out.println(position);
+
     }
 }

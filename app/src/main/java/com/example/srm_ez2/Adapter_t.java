@@ -17,14 +17,18 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Adapter_t extends FirebaseRecyclerAdapter<Model, Adapter_t.myViewHolder> {
 
+    private final RecyclerViewInterface recyclerViewInterface;
+
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      * @param options
      */
-    public Adapter_t(@NonNull FirebaseRecyclerOptions<Model> options) {
+    public Adapter_t(@NonNull FirebaseRecyclerOptions<Model> options,RecyclerViewInterface recyclerViewInterface) {
         super(options);
+        this.recyclerViewInterface = recyclerViewInterface;
+
     }
 
     @Override
@@ -61,6 +65,20 @@ public class Adapter_t extends FirebaseRecyclerAdapter<Model, Adapter_t.myViewHo
             Course = (TextView) itemView.findViewById(R.id.coursetxt);
             Email = (TextView) itemView.findViewById(R.id.emailtxt);
             Room = (TextView) itemView.findViewById(R.id.roomtxt);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerViewInterface != null) {
+                        int pos = getBindingAdapterPosition();
+
+
+                        if(pos !=RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
 
     }
