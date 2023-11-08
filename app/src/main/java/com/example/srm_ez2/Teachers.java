@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -88,7 +90,29 @@ public class Teachers extends AppCompatActivity implements RecyclerViewInterface
 
     @Override
     public void onItemClick(int position) {
-        System.out.println(position);
-
+        if(position==0){
+            Intent t0 = new Intent(this, teacher_0.class);
+            startActivity(t0);
+        }
+        if(position==1){
+            Intent t1 = new Intent(this,teacher1.class);
+            startActivity(t1);
+        }
+        if(position==2){
+            Intent t2 = new Intent(this,teacher2.class);
+            startActivity(t2);
+        }
+        if(position==3){
+            Intent t3 = new Intent(this, teacher3.class);
+            startActivity(t3);
+        }
+        if(position==4){
+            Intent t4 = new Intent(this, teacher4.class);
+            startActivity(t4);
+        }
+        if(position==5){
+            Intent t5 = new Intent(this, teacher5.class);
+            startActivity(t5);
+        }
     }
 }

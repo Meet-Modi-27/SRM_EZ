@@ -5,20 +5,23 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Clubs extends AppCompatActivity {
+public class Clubs extends AppCompatActivity implements RecyclerViewInterface {
     RecyclerView recyclerView;
     Adapter_c ac;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clubs);
+
 
         recyclerView = findViewById(R.id.c_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -28,7 +31,7 @@ public class Clubs extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Clubs"), Club_Model.class)
                         .build();
 
-        ac = new Adapter_c(options);
+        ac = new Adapter_c(options,this);
         recyclerView.setAdapter(ac);
     }
     @Override
@@ -71,9 +74,14 @@ public class Clubs extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Clubs").orderByChild("C_name").startAt(str).endAt(str + "~"), Club_Model.class)
                         .build();
 
-        ac = new Adapter_c(options);
+        ac = new Adapter_c(options,this);
         ac.startListening();
         recyclerView.setAdapter(ac);
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Log.d("Demo", "Position: "+ position);
+
+    }
 }

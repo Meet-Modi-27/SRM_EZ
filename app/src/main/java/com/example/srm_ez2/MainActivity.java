@@ -52,7 +52,6 @@ Toolbar toolbar;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         if (itemId==R.id.opt1){
-            //Add intent here.
             Intent home = new Intent(this, Basic_Info.class);
             startActivity(home);
         }

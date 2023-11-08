@@ -1,8 +1,11 @@
 package com.example.srm_ez2;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,14 +19,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Adapter_c extends FirebaseRecyclerAdapter<Club_Model,Adapter_c.viewHolder> {
 
+    private final RecyclerViewInterface recyclerViewInterface;
+
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      * @param options
      */
-    public Adapter_c(@NonNull FirebaseRecyclerOptions<Club_Model> options) {
+    public Adapter_c(@NonNull FirebaseRecyclerOptions<Club_Model> options, RecyclerViewInterface recyclerViewInterface) {
         super(options);
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @Override
@@ -57,6 +63,20 @@ public class Adapter_c extends FirebaseRecyclerAdapter<Club_Model,Adapter_c.view
             img2 = (CircleImageView)itemView.findViewById(R.id.img2);
             name = (TextView)itemView.findViewById(R.id.c_name);
             des = (TextView)itemView.findViewById(R.id.c_des);
+
+            itemView.findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerViewInterface != null) {
+                        int pos = getBindingAdapterPosition();
+
+
+                        if(pos !=RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }
