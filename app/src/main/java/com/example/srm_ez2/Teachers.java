@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
@@ -89,30 +90,33 @@ public class Teachers extends AppCompatActivity implements RecyclerViewInterface
     }
 
     @Override
-    public void onItemClick(int position) {
-        if(position==0){
+    public void onItemClick(String name) {
+        Log.d("","Value"+name);
+        if("Hema Ma'am".equals(name)){
             Intent t0 = new Intent(this, teacher_0.class);
             startActivity(t0);
         }
-        if(position==1){
+        else if("Thilagavathy Ma'am".equals(name)){
             Intent t1 = new Intent(this,teacher1.class);
             startActivity(t1);
         }
-        if(position==2){
+        else if("Jeba Sir".equals(name)){
             Intent t2 = new Intent(this,teacher2.class);
             startActivity(t2);
         }
-        if(position==3){
+        else if("Pradeep Sir".equals(name)){
             Intent t3 = new Intent(this, teacher3.class);
             startActivity(t3);
         }
-        if(position==4){
+        else if("Dipankar Sir".equals(name)){
             Intent t4 = new Intent(this, teacher4.class);
             startActivity(t4);
         }
-        if(position==5){
+        else if("Uden Sir".equals(name)){
             Intent t5 = new Intent(this, teacher5.class);
             startActivity(t5);
+        }else{
+            Toast.makeText(this, "We are working on it!!", Toast.LENGTH_SHORT).show();
         }
     }
 }

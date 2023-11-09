@@ -7,4 +7,5 @@
     tools:context=".Basic_Info"
     android:background="#F8F0E6">
 
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

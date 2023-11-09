@@ -34,7 +34,7 @@ public class Adapter_c extends FirebaseRecyclerAdapter<Club_Model,Adapter_c.view
 
     @Override
     protected void onBindViewHolder(@NonNull viewHolder holder, int position, @NonNull Club_Model model) {
-        holder.name.setText(model.getC_name());
+        holder.Name.setText(model.getC_name());
         holder.des.setText(model.getDes());
 
         Glide.with(holder.img2.getContext())
@@ -55,25 +55,21 @@ public class Adapter_c extends FirebaseRecyclerAdapter<Club_Model,Adapter_c.view
 
     class viewHolder extends RecyclerView.ViewHolder{
         CircleImageView img2;
-        TextView name,des;
+        TextView Name,des;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
 
             img2 = (CircleImageView)itemView.findViewById(R.id.img2);
-            name = (TextView)itemView.findViewById(R.id.c_name);
+            Name = (TextView)itemView.findViewById(R.id.c_name);
             des = (TextView)itemView.findViewById(R.id.c_des);
 
             itemView.findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (recyclerViewInterface != null) {
-                        int pos = getBindingAdapterPosition();
-
-
-                        if(pos !=RecyclerView.NO_POSITION){
-                            recyclerViewInterface.onItemClick(pos);
-                        }
+                        String name= Name.getText().toString();
+                        recyclerViewInterface.onItemClick(name);
                     }
                 }
             });

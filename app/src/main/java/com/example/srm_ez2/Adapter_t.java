@@ -70,12 +70,8 @@ public class Adapter_t extends FirebaseRecyclerAdapter<Model, Adapter_t.myViewHo
                 @Override
                 public void onClick(View view) {
                     if (recyclerViewInterface != null) {
-                        int pos = getBindingAdapterPosition();
-
-
-                        if(pos !=RecyclerView.NO_POSITION){
-                            recyclerViewInterface.onItemClick(pos);
-                        }
+                        String name = Name.getText().toString();
+                        recyclerViewInterface.onItemClick(name);
                     }
                 }
             });
