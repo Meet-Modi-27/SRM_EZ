@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="16dp"
-                android:text="Hema Ma'am"
+                android:text="Thilagavathy Ma'am"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="#333333"
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
-                android:text="Advanced Programming Practices"
+                android:text="Data Structures and Algorithms"
                 android:textSize="18sp"
                 android:textColor="#666666"
                 android:layout_marginTop="8dp" />

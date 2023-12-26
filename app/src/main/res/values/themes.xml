@@ -15,6 +15,14 @@
 
     </style>
 
+    <style name="MyTheme1" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <!-- Customize your light theme here. -->
+    <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <item name="colorPrimary">@color/blue</item>
+    <item name="android:windowIsTranslucent">true</item>
+
+</style>
+
     <style name="OverflowMenuStyle" parent="Widget.AppCompat.ActionButton.Overflow">
         <!-- Set the desired color for the overflow menu icon -->
         <item name="android:tint">@color/white</item>

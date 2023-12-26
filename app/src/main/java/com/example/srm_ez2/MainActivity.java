@@ -22,13 +22,11 @@ Toolbar toolbar;
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        /*
+                /*
             To Get Back Button.
         if(getSupportActionBar()!=null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }*/
-
 
         if (getSupportActionBar() != null) {
             // Create a SpannableString with the desired title text

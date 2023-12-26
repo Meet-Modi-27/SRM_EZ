@@ -4,32 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#F8F0E5">
+    android:background="#F8F0E5"
+    tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/blue">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/blue">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
-</com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="35sp"
+        android:paddingRight="20sp"
+        android:shadowColor="@color/blue"
+        android:text="Welcome to SRM EZ, the comprehensive resource management app tailored for the SRM Institute of Science and Technology community. In a fast-paced academic environment, SRM EZ serves as the perfect solution for streamlined information access. This user-friendly app consolidates a wealth of vital data, making it a breeze to stay informed about clubs and organizations, explore faculty profiles, and keep abreast of placement opportunities. With its intuitive interface and easy navigation, SRM EZ ensures that all essential information is just a tap away. Join us in embracing the convenience and efficiency of SRM EZ."
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintVertical_bias="0.097"
+        android:justificationMode="inter_word"
+        android:textAlignment="textStart"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

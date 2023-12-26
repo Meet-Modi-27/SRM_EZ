@@ -79,4 +79,3 @@ public class Adapter_t extends FirebaseRecyclerAdapter<Model, Adapter_t.myViewHo
 
     }
 }
-
