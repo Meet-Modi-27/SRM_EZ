@@ -39,9 +39,9 @@ public class Adapter_c extends FirebaseRecyclerAdapter<Club_Model,Adapter_c.view
 
         Glide.with(holder.img2.getContext())
                 .load(model.getSurl())
-                .placeholder(com.google.android.gms.base.R.drawable.common_google_signin_btn_icon_dark)
+                .placeholder(R.drawable.loading_svgrepo_com)
                 .circleCrop()
-                .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
+                .error(R.drawable.loading_svgrepo_com)
                 .into(holder.img2);
     }
 

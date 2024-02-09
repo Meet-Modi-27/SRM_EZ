@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#6300f2</color>
+    <color name="Card_1">#d3cee0</color>
+    <color name="Banner">#f0efe8</color>
+    <color name="Banner_bg">#f4e8cd</color>
+    <color name="Back">#cfd2d8</color>
 </resources>

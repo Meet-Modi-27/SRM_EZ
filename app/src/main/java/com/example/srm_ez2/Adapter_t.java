@@ -40,9 +40,9 @@ public class Adapter_t extends FirebaseRecyclerAdapter<Model, Adapter_t.myViewHo
 
         Glide.with(holder.img.getContext())
                 .load(model.getSurl())
-                .placeholder(com.google.firebase.database.R.drawable.common_google_signin_btn_icon_dark)
+                .placeholder(R.drawable.loading_svgrepo_com)
                 .circleCrop()
-                .error(com.google.android.gms.base.R.drawable.common_google_signin_btn_icon_dark_normal)
+                .error(R.drawable.loading_svgrepo_com)
                 .into(holder.img);
     }
 

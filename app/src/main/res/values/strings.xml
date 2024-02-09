@@ -6,6 +6,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="App">SRM EZ</string>
 
 
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -14,4 +15,9 @@
         litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
         diam, vel rutrum tellus vulputate quis.
     </string>
+
+    <string name="app_desc">
+        Welcome to SRMEZ, the comprehensive resource management application designed specifically for the SRM Institute of Science and Technology community. In a dynamic academic setting, SRMEZ stands out as the ideal solution for efficient access to information. This user-friendly application brings together essential data, simplifying the process of staying updated on clubs and organizations, exploring faculty profiles, and staying informed about placement opportunities. With its intuitive interface and seamless navigation, SRMEZ guarantees that all the necessary information is easily accessible with just a tap. Join us in embracing the convenience and effectiveness of SRMEZ.
+    </string>
+
 </resources>
