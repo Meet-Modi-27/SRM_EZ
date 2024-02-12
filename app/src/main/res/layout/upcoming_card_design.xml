@@ -3,11 +3,12 @@
     android:layout_width="160dp"
     android:layout_height="260dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="2dp"
+    app:cardCornerRadius="10dp"
     android:elevation="8dp"
     android:layout_margin="10dp">
 
     <LinearLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
@@ -29,7 +30,8 @@
             android:fontFamily="@font/baloo"
             android:text="Image 1"
             android:textColor="@color/black"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:layout_marginBottom="3dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,6 +44,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/black"
                     android:id="@+id/date_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -49,6 +52,7 @@
                     android:textStyle="bold"
                     android:fontFamily="@font/baloo"/>
                 <TextView
+                    android:textColor="@color/black"
                     android:id="@+id/date_fire"
                     android:paddingLeft="5dp"
                     android:layout_toRightOf="@+id/date_txt"
@@ -63,6 +67,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/black"
                     android:id="@+id/time_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,6 +75,7 @@
                     android:textStyle="bold"
                     android:fontFamily="@font/baloo"/>
                 <TextView
+                    android:textColor="@color/black"
                     android:id="@+id/time_fire"
                     android:paddingLeft="5dp"
                     android:layout_toRightOf="@+id/time_txt"
@@ -84,6 +90,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@color/black"
                     android:id="@+id/reg_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -91,6 +98,7 @@
                     android:text="Reg Fees: "
                     android:textStyle="bold" />
                 <TextView
+                    android:textColor="@color/black"
                     android:id="@+id/reg_fire"
                     android:paddingLeft="5dp"
                     android:layout_toRightOf="@+id/reg_txt"

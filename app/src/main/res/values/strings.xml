@@ -17,7 +17,10 @@
     </string>
 
     <string name="app_desc">
-        Welcome to SRMEZ, the comprehensive resource management application designed specifically for the SRM Institute of Science and Technology community. In a dynamic academic setting, SRMEZ stands out as the ideal solution for efficient access to information. This user-friendly application brings together essential data, simplifying the process of staying updated on clubs and organizations, exploring faculty profiles, and staying informed about placement opportunities. With its intuitive interface and seamless navigation, SRMEZ guarantees that all the necessary information is easily accessible with just a tap. Join us in embracing the convenience and effectiveness of SRMEZ.
+        Welcome to SRM EZ, the comprehensive resource management application designed specifically for the SRM Institute of Science and Technology community. In a dynamic academic setting, SRM EZ stands out as the ideal solution for efficient access to information. This user-friendly application brings together essential data, simplifying the process of staying updated on clubs and organizations, exploring faculty profiles, and staying informed about placement opportunities. With its intuitive interface and seamless navigation, SRM EZ guarantees that all the necessary information is easily accessible with just a tap. Join us in embracing the convenience and effectiveness of SRM EZ.
     </string>
+    <string name="home_fact">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus.</string>
 
 </resources>

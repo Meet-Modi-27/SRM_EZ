@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Teachers"
-    android:background="#F8F0E5">
+    android:background="@color/white"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp">
 
 <ScrollView
     android:layout_width="match_parent"
@@ -16,7 +18,7 @@
         android:id="@+id/rv"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="5dp" />
 
 </ScrollView>
 

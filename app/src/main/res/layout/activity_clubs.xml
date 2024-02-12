@@ -11,6 +11,9 @@
     android:layout_height="wrap_content">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:elevation="10dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
         android:id="@+id/c_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

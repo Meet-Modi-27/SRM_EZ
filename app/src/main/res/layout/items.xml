@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="6dp"
+    app:cardCornerRadius="10dp"
     android:elevation="6dp"
     app:cardUseCompatPadding="true">
 
@@ -11,15 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:background="@color/white">
+        android:background="#FAF9F6">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/load_pic"
+            android:src="@drawable/loading_svgrepo_com"
             android:layout_centerVertical="true"
             android:id="@+id/img1"
             app:civ_border_width="2dp"
+            android:layout_marginRight="3dp"
             app:civ_border_color="#FF000000"/>
         
         <TextView

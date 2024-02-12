@@ -57,6 +57,7 @@
                 android:elevation="10dp">
 
                 <LinearLayout
+                    android:id="@+id/teacher"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -90,6 +91,7 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/clubs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -123,6 +125,7 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/placements"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -156,6 +159,7 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/contacts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -192,6 +196,7 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:elevation="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -244,6 +249,34 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:elevation="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:padding="20dp"
+                android:background="@color/Banner"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo"
+                    android:text="Facts"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:layout_gravity="center"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_facts_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:elevation="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -260,6 +293,7 @@
                     android:textSize="22dp"
                     android:layout_gravity="center"/>
                 <TextView
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alike"

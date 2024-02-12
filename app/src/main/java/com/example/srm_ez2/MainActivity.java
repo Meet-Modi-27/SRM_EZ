@@ -14,17 +14,22 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView upcoming_recycler;
+    LinearLayout b1,b2,b3,b4;
+    RecyclerView upcoming_recycler,facts_recycler;
     Toolbar toolbar;
     Adapter_Upcoming ad;
+    Adapter_facts ad1;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(spannableString);
         }
 
+        //Recycler Views
+
         upcoming_recycler = findViewById(R.id.upcoming_recycle);
-
         upcoming_recycler();
-
         FirebaseRecyclerOptions<upcoming_model> options =
                 new FirebaseRecyclerOptions.Builder<upcoming_model>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Upcoming"), upcoming_model.class)
@@ -60,18 +65,73 @@ public class MainActivity extends AppCompatActivity {
 
         ad = new Adapter_Upcoming(options);
         upcoming_recycler.setAdapter(ad);
+
+        facts_recycler = findViewById(R.id.home_facts_recycler);
+        facts_recycler();
+        FirebaseRecyclerOptions<facts_model> option=
+                new FirebaseRecyclerOptions.Builder<facts_model>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("facts"), facts_model.class)
+                        .build();
+
+        ad1 = new Adapter_facts(option);
+        facts_recycler.setAdapter(ad1);
+
+
+
+        //Clickable Layout.
+
+        b1 =(LinearLayout) findViewById(R.id.teacher);
+        b2=(LinearLayout) findViewById(R.id.clubs);
+        b3=(LinearLayout) findViewById(R.id.placements);
+        b4= (LinearLayout) findViewById(R.id.contacts);
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(MainActivity.this, Teachers.class);
+                startActivity(home);
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(MainActivity.this, Clubs.class);
+                startActivity(home);
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(MainActivity.this, Placements.class);
+                startActivity(home);
+            }
+        });
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(MainActivity.this, Contact_Us.class);
+                startActivity(home);
+            }
+        });
+    }
+
+    private void facts_recycler() {
+        facts_recycler.setHasFixedSize(true);
+        facts_recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         ad.startListening();
+        ad1.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         ad.stopListening();
+        ad1.stopListening();
     }
 
     private void upcoming_recycler() {
@@ -79,42 +139,5 @@ public class MainActivity extends AppCompatActivity {
         upcoming_recycler.setHasFixedSize(true);
         upcoming_recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        new MenuInflater(this).inflate(R.menu.opt_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int itemId = item.getItemId();
-        if (itemId==R.id.opt1){
-            Intent home = new Intent(this, Basic_Info.class);
-            startActivity(home);
-        }
-        else if(itemId==R.id.opt2){
-            Intent home = new Intent(this, Teachers.class);
-            startActivity(home);
-        }
-        else if(itemId==R.id.opt3){
-            Intent home = new Intent(this, Clubs.class);
-            startActivity(home);
-        }
-        else if(itemId==R.id.opt4){
-            Intent home = new Intent(this, Placements.class);
-            startActivity(home);
-        }
-        else if(itemId==R.id.opt5){
-            Intent home = new Intent(this, Contact_Us.class);
-            startActivity(home);
-            finish();
-        }
-        else{
-
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
